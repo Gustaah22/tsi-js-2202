@@ -9,7 +9,18 @@ O cálculo deve ficar obrigatoriamente em
 uma função.    
 */
 
-let serviço = prompt("Qual serviço você quer ?");
+let tabela = [['$$$', '$$', '$'],['$$$$', '$$$', '$$' ],['--', '--', '$$$']];
 
-let horas = prompt("Quantas horas você quer ?");
+let serviço = prompt("Entre com o serviço: \n0 - Troca de óleo \n1 - Balanceamento \n2 - Cambagem");
+let prazo = prompt("Entre com o prazo: \n0 - Um dia \n1 - Dois dias \n2 - Três Dias");
 
+if( validaEntrada(serviço) && validaEntrada(prazo)){
+    alert("O serviço ficará em: " + tabela[serviço][prazo]);
+}
+else{
+    alert("ERRO: Verifique os valores inseridos e tente novamente");
+}
+
+function validaEntrada(dadousuario){
+    return dadousuario >= 0 && dadousuario <= 2 ? true : false;
+}
